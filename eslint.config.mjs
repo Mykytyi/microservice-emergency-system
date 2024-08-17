@@ -4,19 +4,21 @@ import ts from "typescript-eslint";
 
 
 export default [
-  {
-    files: ["**/*.{js,mjs,cjs,ts}"],
-    rules: {
-      "semi": "error",
-      "prefer-const": "error",
-      "quotes": ['error', 'single'], // Использование одинарных кавычек
-    }
-  },
+  pluginJs.configs.recommended,
+  ...ts.configs.recommended,
   {
     languageOptions: {
       globals: globals.browser,
     }
   },
-  pluginJs.configs.recommended,
-  ...ts.configs.recommended,
+  {
+    files: ["**/*.{js,mjs,cjs,ts}"],
+    rules: {
+      "semi": "error",
+      "prefer-const": "error",
+    }
+  },
+  {
+    ignores: ["dist/*"]
+  }
 ];
