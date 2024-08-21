@@ -10,19 +10,20 @@ export default [
       globals: globals.browser
     }
   },
+  pluginJs.configs.recommended,
+  ...ts.configs.recommended,
+  eslintConfigPrettier,
+  eslintPluginPrettierRecommended,
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
     rules: {
-      'no-unused-vars': 'warn',
+      '@typescript-eslint/no-unused-vars': 'warn',
       'space-unary-ops': 'error',
-      'prefer-const': 'error'
+      'prefer-const': 'error',
+      '@typescript-eslint/no-explicit-any': 'off'
     }
   },
   {
     ignores: ['dist/*']
-  },
-  pluginJs.configs.recommended,
-  ...ts.configs.recommended,
-  eslintConfigPrettier,
-  eslintPluginPrettierRecommended
+  }
 ];

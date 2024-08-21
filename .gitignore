@@ -88,3 +88,6 @@ web_modules/
 
 # Serverless directories
 .serverless/
+
+# Postgres data
+docker/postgres-data/
